@@ -302,3 +302,14 @@ footer {
   }
 
 }
+/* Remove background box from homepage logo */
+
+.logoicon {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.logoicon {
+  color: #8cb0ff !important;
+}
