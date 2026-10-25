@@ -815,6 +815,54 @@ else reject(new Error("Unable to create image."));
 });
 }
 
+async function setJpegDPI(blob, dpi = 300) {
+  const buffer = await blob.arrayBuffer();
+  const bytes = new Uint8Array(buffer);
+
+  if (bytes[0] !== 0xFF || bytes[1] !== 0xD8) {
+    throw new Error("Invalid JPEG file");
+  }
+
+  let pos = 2;
+
+  while (pos + 4 < bytes.length) {
+    if (bytes[pos] !== 0xFF) break;
+
+    const marker = bytes[pos + 1];
+
+    if (marker === 0xDA || marker === 0xD9) break;
+
+    const length = (bytes[pos + 2] << 8) | bytes[pos + 3];
+
+    if (length < 2 || pos + 2 + length > bytes.length) {
+      break;
+    }
+
+    if (
+      marker === 0xE0 &&
+      length >= 16 &&
+      bytes[pos + 4] === 0x4A &&
+      bytes[pos + 5] === 0x46 &&
+      bytes[pos + 6] === 0x49 &&
+      bytes[pos + 7] === 0x46
+    ) {
+      bytes[pos + 11] = 1;
+
+      bytes[pos + 12] = (dpi >> 8) & 255;
+      bytes[pos + 13] = dpi & 255;
+
+      bytes[pos + 14] = (dpi >> 8) & 255;
+      bytes[pos + 15] = dpi & 255;
+
+      return new Blob([bytes], { type: "image/jpeg" });
+    }
+
+    pos += 2 + length;
+  }
+
+  throw new Error("JPEG JFIF metadata not found");
+}
+
 async function createPhoto(){
 
 if(!sourceImage){
@@ -886,7 +934,11 @@ sx,sy,sw,sh,
 0,0,width,height
 );
 
-resultBlob=await canvasToBlob(canvas,format,.92);
+resultBlob = await canvasToBlob(canvas, format, .92);
+
+if (format === "image/jpeg") {
+  resultBlob = await setJpegDPI(resultBlob, 300);
+}
 
 resultURL=URL.createObjectURL(resultBlob);
 
