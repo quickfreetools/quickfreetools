@@ -1,19 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080d1b">
-<meta name="description" content="Free online tools to count words, resize images and compress photos. Fast, private and easy to use.">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Free online tools to count words, resize & compress images, reduce photo size in KB, resize passport photos, and convert JPG to PDF. Fast, private, and free to use.">
 <title>QuickFreeTools — Smart Tools. Zero Cost.</title>
 <link rel="canonical" href="https://quickfreetools.github.io/quickfreetools/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%236888ff'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='white'%3E%E2%9C%B3%3C/text%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickFreeTools">
 <meta property="og:title" content="QuickFreeTools - Free Online Tools">
-<meta property="og:description" content="Free online tools to count words, resize images and compress photos. Fast, simple and privacy-friendly.">
+<meta property="og:description" content="Free online tools to count words, resize & compress images, reduce photo size in KB, resize passport photos, and convert JPG to PDF.">
 <meta property="og:url" content="https://quickfreetools.github.io/quickfreetools/">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="QuickFreeTools - Free Online Tools">
+<meta name="twitter:description" content="Free online tools to count words, resize images, compress photos and convert JPG to PDF.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "QuickFreeTools",
+  "url": "https://quickfreetools.github.io/quickfreetools/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {"@type":"SiteNavigationElement","position":1,"name":"Word Counter","url":"https://quickfreetools.github.io/quickfreetools/#words"},
+    {"@type":"SiteNavigationElement","position":2,"name":"Image Resizer","url":"https://quickfreetools.github.io/quickfreetools/#resize"},
+    {"@type":"SiteNavigationElement","position":3,"name":"Image Compressor","url":"https://quickfreetools.github.io/quickfreetools/#compress"},
+    {"@type":"SiteNavigationElement","position":4,"name":"Photo Size in KB","url":"https://quickfreetools.github.io/quickfreetools/photo-size-in-kb.html"},
+    {"@type":"SiteNavigationElement","position":5,"name":"Signature Resizer","url":"https://quickfreetools.github.io/quickfreetools/signature-resizer.html"},
+    {"@type":"SiteNavigationElement","position":6,"name":"Passport Photo Resizer","url":"https://quickfreetools.github.io/quickfreetools/passport-photo-resizer.html"},
+    {"@type":"SiteNavigationElement","position":7,"name":"JPG to PDF Converter","url":"https://quickfreetools.github.io/quickfreetools/jpg-to-pdf.html"}
+  ]
+}
+</script>
+
 <style>
 :root{--bg:#080d1b;--panel:#10182a;--panel2:#141f35;--line:#24314a;--text:#f3f6ff;--muted:#98a6c1;--blue:#6485ff;--cyan:#49e0dc;--green:#76e6b2}
 *{box-sizing:border-box}
@@ -93,13 +122,27 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 .notice{font-size:11px;color:#8798b5;margin-top:13px}
 .empty{color:var(--muted);font-size:13px;padding:12px 0}
 @media(max-width:700px){.navlinks{gap:12px}.navlinks .hide{display:none}.hero{padding-top:55px}h1{letter-spacing:-1.8px}.grid{grid-template-columns:1fr}.card{padding:20px}.card p{min-height:0}.sectionhead{align-items:start;flex-direction:column}.metrics{grid-template-columns:repeat(2,1fr)}.options{grid-template-columns:1fr}.stats{gap:12px}.panelhead h3{font-size:18px}}
+
+/* ---- Additions below: no visual change in normal use, only accessibility/footer-link styling ---- */
+.skip-link{position:absolute;left:-999px;top:auto;background:var(--blue);color:white;padding:10px 16px;border-radius:8px;z-index:100}
+.skip-link:focus{left:16px;top:16px}
+.toolpanel:focus{outline:2px solid var(--blue);outline-offset:4px}
+.inline-check{width:auto;margin-right:6px}
+.footerlinks{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-bottom:14px;font-size:12px}
+.footerlinks a{color:#8ab4ff}
+.footerlinks a:hover{color:white}
+.related{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;text-align:left}
+.related p{font-size:12px;color:var(--muted);margin-bottom:12px;font-weight:700;letter-spacing:.5px}
+.related .rowtools a{font-size:12px;padding:8px 14px;margin:0}
 </style>
 <link rel="stylesheet" href="premium.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <nav>
   <div class="wrap navrow">
-    <a class="logo" href="#" aria-label="QuickFreeTools home"><span class="logoicon">✳</span><span>Quick<em>Free</em>Tools</span></a>
+    <a class="logo" href="./" aria-label="QuickFreeTools home"><span class="logoicon">✳</span><span>Quick<em>Free</em>Tools</span></a>
     <div class="navlinks">
       <a href="#tools">Explore tools</a>
       <a class="hide" href="#about">About</a>
@@ -125,11 +168,11 @@ no downloads or sign-ups required.
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main-content">
 <section class="section" id="tools">
   <div class="sectionhead">
     <div><div class="kicker">THE TOOLKIT</div><h2>Get things done.</h2><p class="sub">Useful tools, without the unnecessary complexity.</p></div>
-    <span class="pill">7 tools available</span>
+    <span class="pill" id="toolcount">7 tools available</span>
   </div>
   <div class="grid" id="toolgrid">
     <article class="card" data-name="word counter text character sentence reading time">
@@ -143,7 +186,7 @@ no downloads or sign-ups required.
 </div><span class="tag">TEXT</span></div>
       <h3>Word Counter</h3>
       <p>Count words, characters, sentences and estimated reading time instantly.</p>
-      <button class="btn secondary" onclick="openTool('words')">Open tool ↗</button>
+      <button class="btn secondary" aria-controls="words" aria-expanded="false" onclick="openTool('words')">Open tool ↗</button>
     </article>
     <article class="card" data-name="image resizer resize photo pixels dimensions jpg png webp">
       <div class="cardtop"><div class="toolicon">
@@ -158,7 +201,7 @@ no downloads or sign-ups required.
 </div><span class="tag">IMAGE</span></div>
       <h3>Image Resizer</h3>
       <p>Change image dimensions in pixels and download your resized photo.</p>
-      <button class="btn secondary" onclick="openTool('resize')">Open tool ↗</button>
+      <button class="btn secondary" aria-controls="resize" aria-expanded="false" onclick="openTool('resize')">Open tool ↗</button>
     </article>
     <article class="card" data-name="image compressor compress reduce file size photo quality jpg webp">
       <div class="cardtop"><div class="toolicon">
@@ -175,7 +218,7 @@ no downloads or sign-ups required.
 </div><span class="tag">IMAGE</span></div>
       <h3>Image Compressor</h3>
       <p>Reduce photo file size with adjustable quality and instant preview.</p>
-      <button class="btn secondary" onclick="openTool('compress')">Open tool ↗</button>
+      <button class="btn secondary" aria-controls="compress" aria-expanded="false" onclick="openTool('compress')">Open tool ↗</button>
     </article>
 <article class="card"
 data-name="photo size in kb converter reduce image 20kb 50kb 100kb 200kb">
@@ -331,8 +374,8 @@ data-name="jpg to pdf converter image to pdf png to pdf webp to pdf combine imag
   <p id="noresults" class="empty" hidden>No matching tools found. Try another search.</p>
 
   <div class="workspace">
-    <section class="toolpanel" id="words">
-      <div class="panelhead"><div><h3>Word Counter</h3><p>Your text stays in this browser.</p></div><button class="closebtn" onclick="closeTools()">Close ×</button></div>
+    <section class="toolpanel" id="words" tabindex="-1" aria-labelledby="wordsHeading">
+      <div class="panelhead"><div><h3 id="wordsHeading">Word Counter</h3><p>Your text stays in this browser.</p></div><button class="closebtn" onclick="closeTools()">Close ×</button></div>
       <textarea id="textinput" placeholder="Start typing or paste your text here..."></textarea>
       <div class="metrics">
         <div class="metric"><strong id="wc">0</strong><span>Words</span></div>
@@ -342,37 +385,39 @@ data-name="jpg to pdf converter image to pdf png to pdf webp to pdf combine imag
       </div>
       <div class="rowtools"><button class="btn" onclick="copyText()">Copy text</button><button class="btn secondary" onclick="document.getElementById('textinput').value='';countWords()">Clear</button></div>
       <p id="copyStatus" class="status" role="status"></p>
-    <div style="margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px; text-align: left;">
-  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.5px;">RELATED TOOLS FOR YOU:</p>
-  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-    <a href="photo-size-in-kb.html" class="btn secondary" style="font-size: 12px; padding: 8px 14px; margin: 0;">Photo Size in KB ↗</a>
-    <a href="signature-resizer.html" class="btn secondary" style="font-size: 12px; padding: 8px 14px; margin: 0;">Signature Resizer ↗</a>
-  </div>
-</div>    </section>
+      <div class="related">
+        <p>RELATED TOOLS FOR YOU:</p>
+        <div class="rowtools">
+          <a href="photo-size-in-kb.html" class="btn secondary">Photo Size in KB ↗</a>
+          <a href="signature-resizer.html" class="btn secondary">Signature Resizer ↗</a>
+        </div>
+      </div>
+    </section>
 
-    <section class="toolpanel" id="resize">
-      <div class="panelhead"><div><h3>Image Resizer</h3><p>Resize an image and download a new copy.</p></div><button class="closebtn" onclick="closeTools()">Close ×</button></div>
+    <section class="toolpanel" id="resize" tabindex="-1" aria-labelledby="resizeHeading">
+      <div class="panelhead"><div><h3 id="resizeHeading">Image Resizer</h3><p>Resize an image and download a new copy.</p></div><button class="closebtn" onclick="closeTools()">Close ×</button></div>
       <div class="dropzone"><div class="bigicon">▧</div><strong>Choose an image to resize</strong><p>JPG, PNG or WebP · processed locally</p><label class="btn filelabel">Choose image<input id="resizeFile" type="file" accept="image/*"></label></div>
       <img id="resizePreview" class="imagepreview" alt="Image resize preview">
       <p id="resizeInfo" class="sub"></p>
       <div class="options">
         <div class="option"><label for="resizeW">Width (px)</label><input id="resizeW" type="number" min="1" max="10000" placeholder="Width"></div>
         <div class="option"><label for="resizeH">Height (px)</label><input id="resizeH" type="number" min="1" max="10000" placeholder="Height"></div>
-        <div class="option"><label><input id="keepRatio" type="checkbox" checked style="width:auto;margin-right:6px">Keep aspect ratio</label></div>
+        <div class="option"><label><input id="keepRatio" type="checkbox" checked class="inline-check">Keep aspect ratio</label></div>
         <div class="option"><label for="resizeFormat">Output format</label><select id="resizeFormat"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option></select></div>
       </div>
       <div class="rowtools"><button class="btn" id="resizeBtn" onclick="processImage('resize')" disabled>Resize & download</button></div>
       <p id="resizeStatus" class="status" role="status"></p>
-    <div style="margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px; text-align: left;">
-  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.5px;">RELATED TOOLS FOR YOU:</p>
-  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-    <a href="photo-size-in-kb.html" class="btn secondary" style="font-size: 12px; padding: 8px 14px; margin: 0;">Photo Size in KB ↗</a>
-    <a href="passport-photo-resizer.html" class="btn secondary" style="font-size: 12px; padding: 8px 14px; margin: 0;">Passport Photo Resizer ↗</a>
-  </div>
-</div>    </section>
+      <div class="related">
+        <p>RELATED TOOLS FOR YOU:</p>
+        <div class="rowtools">
+          <a href="photo-size-in-kb.html" class="btn secondary">Photo Size in KB ↗</a>
+          <a href="passport-photo-resizer.html" class="btn secondary">Passport Photo Resizer ↗</a>
+        </div>
+      </div>
+    </section>
 
-    <section class="toolpanel" id="compress">
-      <div class="panelhead"><div><h3>Image Compressor</h3><p>Reduce file size by adjusting image quality.</p></div><button class="closebtn" onclick="closeTools()">Close ×</button></div>
+    <section class="toolpanel" id="compress" tabindex="-1" aria-labelledby="compressHeading">
+      <div class="panelhead"><div><h3 id="compressHeading">Image Compressor</h3><p>Reduce file size by adjusting image quality.</p></div><button class="closebtn" onclick="closeTools()">Close ×</button></div>
       <div class="dropzone"><div class="bigicon">◈</div><strong>Choose an image to compress</strong><p>JPG, PNG or WebP · processed locally</p><label class="btn filelabel">Choose image<input id="compressFile" type="file" accept="image/*"></label></div>
       <img id="compressPreview" class="imagepreview" alt="Image compression preview">
       <p id="compressInfo" class="sub"></p>
@@ -383,15 +428,16 @@ data-name="jpg to pdf converter image to pdf png to pdf webp to pdf combine imag
       <div class="rowtools"><button class="btn" id="compressBtn" onclick="processImage('compress')" disabled>Compress & download</button></div>
       <p id="compressStatus" class="status" role="status"></p>
       <p class="notice">Note: PNG output is lossless; the quality slider mainly affects JPG and WebP. Actual savings depend on the original image.</p>
+      <div class="related">
+        <p>RELATED TOOLS FOR YOU:</p>
+        <div class="rowtools">
+          <a href="photo-size-in-kb.html" class="btn secondary">Photo Size in KB ↗</a>
+          <a href="signature-resizer.html" class="btn secondary">Signature Resizer ↗</a>
+        </div>
+      </div>
     </section>
   </div>
-<div style="margin-top: 30px; border-top: 1px solid var(--line); padding-top: 20px; text-align: left;">
-  <p style="font-size: 12px; color: var(--muted); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.5px;">RELATED TOOLS FOR YOU:</p>
-  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-    <a href="photo-size-in-kb.html" class="btn secondary" style="font-size: 12px; padding: 8px 14px; margin: 0;">Photo Size in KB ↗</a>
-    <a href="signature-resizer.html" class="btn secondary" style="font-size: 12px; padding: 8px 14px; margin: 0;">Signature Resizer ↗</a>
-  </div>
-</div></section>
+</section>
 
 <section class="section" id="about" style="padding-top:0">
   <div class="card" style="text-align:center;padding:30px">
@@ -402,26 +448,51 @@ data-name="jpg to pdf converter image to pdf png to pdf webp to pdf combine imag
 </section>
 </main>
 
-<footer><div class="wrap footerrow"><span>© <span id="year"></span> QuickFreeTools</span><span>Useful tools. Simple experience.</span></div></footer>
+<footer>
+  <div class="wrap">
+    <div class="footerlinks">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="footerrow">
+      <span>© <span id="year"></span> QuickFreeTools</span>
+      <span>Useful tools. Simple experience.</span>
+    </div>
+  </div>
+</footer>
 
 <script>
 const $=id=>document.getElementById(id);
 $('year').textContent=new Date().getFullYear();
 
+const toolCountEl=document.querySelector('#tools .pill');
+if(toolCountEl){
+  const count=document.querySelectorAll('#toolgrid .card').length;
+  toolCountEl.textContent=count+' tools available';
+}
+
 function openTool(id){
   document.querySelectorAll('.toolpanel').forEach(p=>p.classList.remove('active'));
-  $(id).classList.add('active');
-  $(id).scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelectorAll('[aria-controls]').forEach(b=>b.setAttribute('aria-expanded','false'));
+  const panel=$(id);
+  panel.classList.add('active');
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+  panel.focus({preventScroll:true});
+  const trigger=document.querySelector(`[aria-controls="${id}"]`);
+  if(trigger)trigger.setAttribute('aria-expanded','true');
 }
 function closeTools(){
   document.querySelectorAll('.toolpanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('[aria-controls]').forEach(b=>b.setAttribute('aria-expanded','false'));
   $('tools').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function searchTools(){
   const q=$('search').value.trim().toLowerCase();
   let found=0;
   document.querySelectorAll('#toolgrid .card').forEach(card=>{
-    const match=(card.dataset.name+' '+card.innerText).toLowerCase().includes(q);
+    const match=(card.dataset.name+' '+card.textContent).toLowerCase().includes(q);
     card.style.display=match?'':'none';
     if(match)found++;
   });
@@ -479,15 +550,23 @@ async function selectImage(type,file){
     $(type+'Preview').src=result.url;
     $(type+'Preview').style.display='block';
     $(type+'Info').textContent=`Original: ${result.img.naturalWidth} × ${result.img.naturalHeight} px · ${formatBytes(file.size)}`;
+    if(file.size>25*1024*1024){
+      $(type+'Info').textContent+=' · Large file, processing may take a moment.';
+    }
     if(type==='resize'){
       $('resizeW').value=result.img.naturalWidth;
       $('resizeH').value=result.img.naturalHeight;
     }
     $(type+'Btn').disabled=false;
   }catch(e){
-    status.textContent=e.message;
+    if(file.type && file.type.toLowerCase().includes('heic')){
+      status.textContent='HEIC photos are not supported by browsers yet. Please convert to JPG first.';
+    }else{
+      status.textContent=e.message;
+    }
   }
 }
+
 $('resizeFile').addEventListener('change',e=>selectImage('resize',e.target.files[0]));
 $('compressFile').addEventListener('change',e=>selectImage('compress',e.target.files[0]));
 $('quality').addEventListener('input',()=>{$('qualityValue').textContent=$('quality').value+'%'});
@@ -543,11 +622,5 @@ async function processImage(type){
   finally{btn.disabled=false}
 }
 </script>
-<footer style="text-align:center;padding:25px 10px;color:#aaa;font-size:14px;">
-  <a href="about.html" style="color:#8ab4ff;margin:8px;">About</a>
-  <a href="contact.html" style="color:#8ab4ff;margin:8px;">Contact</a>
-  <a href="privacy-policy.html" style="color:#8ab4ff;margin:8px;">Privacy Policy</a>
-  <a href="terms.html" style="color:#8ab4ff;margin:8px;">Terms</a>
-  <p>© 2026 QuickFreeTools</p>
-</footer></body>
+</body>
 </html>
