@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d1b">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Free online image resizer. Change image dimensions in pixels and download instantly. Supports JPG, PNG and WebP. Fast, private and no sign-up needed.">
+<title>Image Resizer — Resize Photos Online Free | QuickFreeTools</title>
+<link rel="canonical" href="https://quickfreetools.github.io/quickfreetools/image-resizer.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QuickFreeTools">
+<meta property="og:title" content="Image Resizer — Free Online Tool">
+<meta property="og:description" content="Change image dimensions in pixels and download your resized photo. Free, private and easy to use.">
+<meta property="og:url" content="https://quickfreetools.github.io/quickfreetools/image-resizer.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Image Resizer — Free Online Tool">
+<meta name="twitter:description" content="Change image dimensions in pixels and download your resized photo.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image Resizer",
+  "url": "https://quickfreetools.github.io/quickfreetools/image-resizer.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Free online image resizer tool. Change image dimensions in pixels and download instantly."
+}
+</script>
+
+<style>
+:root{--bg:#080d1b;--panel:#10182a;--panel2:#141f35;--line:#24314a;--text:#f3f6ff;--muted:#98a6c1;--blue:#6485ff;--cyan:#49e0dc;--green:#76e6b2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Arial,sans-serif;line-height:1.6}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,92%);margin:auto}
+nav{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;position:sticky;top:0;background:#080d1bf2;backdrop-filter:blur(16px);z-index:10}
+.navrow{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:850;font-size:19px;letter-spacing:-.7px}
+.logoicon{width:37px;height:37px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#6888ff,#48dedb);color:#081020;font-size:21px}
+.logo em{font-style:normal;color:#8ea5ff}
+.navlinks{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:13px}
+.navlinks a:hover{color:white}
+.pill{border:1px solid #35466a;border-radius:30px;padding:8px 13px;color:#dce4ff;font-size:12px}
+.pagehead{padding:48px 0 28px;text-align:center}
+.kicker{color:#8fa5ff;font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:800}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-1.5px;margin:14px 0 12px;font-weight:850}
+.pagehead p{max-width:560px;margin:0 auto;color:var(--muted);font-size:15px}
+.section{padding:10px 0 65px}
+.btn{border:0;border-radius:11px;padding:12px 17px;background:linear-gradient(135deg,#718aff,#4c68ee);color:white;font-weight:750;font-size:13px;transition:transform .2s,filter .2s}
+.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.btn.secondary{background:#1a2740;border:1px solid #344563}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.toolpanel{background:#10192b;border:1px solid #293853;border-radius:20px;padding:clamp(18px,4vw,32px);max-width:780px;margin:0 auto}
+.dropzone{border:1px dashed #53658a;border-radius:15px;padding:30px 15px;text-align:center;background:#0b1425}
+.dropzone .bigicon{font-size:35px}
+.dropzone p{font-size:13px;color:var(--muted)}
+.filelabel{display:inline-block;cursor:pointer}
+.filelabel input{display:none}
+.imagepreview{display:none;max-width:100%;max-height:300px;object-fit:contain;margin:18px auto;border-radius:10px}
+.sub{color:var(--muted);font-size:13px;margin:0}
+.options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
+.option label{display:block;color:var(--muted);font-size:12px;margin-bottom:6px}
+.option input,.option select{width:100%;background:#080f1e;color:white;border:1px solid #2a3955;border-radius:10px;padding:10px}
+.option input:focus,.option select:focus{border-color:var(--blue);outline:none}
+.inline-check{width:auto;margin-right:6px}
+.rowtools{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.status{color:var(--green);font-size:13px;margin-top:13px;overflow-wrap:anywhere}
+.related{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;text-align:left}
+.related p{font-size:12px;color:var(--muted);margin-bottom:12px;font-weight:700;letter-spacing:.5px}
+.related .rowtools a{font-size:12px;padding:8px 14px;margin:0}
+.infoblock{max-width:780px;margin:40px auto 0;color:var(--muted);font-size:13px}
+.infoblock h2{color:var(--text);font-size:19px;margin-bottom:10px}
+.infoblock ul{padding-left:20px}
+.infoblock li{margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px}
+.footerrow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.footerlinks{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;margin-bottom:14px;font-size:12px}
+.footerlinks a{color:#8ab4ff}
+.footerlinks a:hover{color:white}
+.skip-link{position:absolute;left:-999px;top:auto;background:var(--blue);color:white;padding:10px 16px;border-radius:8px;z-index:100}
+.skip-link:focus{left:16px;top:16px}
+@media(max-width:700px){.navlinks{gap:12px}.navlinks .hide{display:none}.options{grid-template-columns:1fr}}
+</style>
+<link rel="stylesheet" href="premium.css">
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<nav>
+  <div class="wrap navrow">
+    <a class="logo" href="./" aria-label="QuickFreeTools home"><span class="logoicon">✳</span><span>Quick<em>Free</em>Tools</span></a>
+    <div class="navlinks">
+      <a href="./#tools">All tools</a>
+      <a class="hide" href="about.html">About</a>
+      <span class="pill">100% Free</span>
+    </div>
+  </div>
+</nav>
+
+<header class="pagehead">
+  <div class="wrap">
+    <div class="kicker">IMAGE TOOL</div>
+    <h1>Image Resizer</h1>
+    <p>Change image dimensions in pixels and download your resized photo. Processed entirely in your browser — nothing is uploaded.</p>
+  </div>
+</header>
+
+<main class="wrap" id="main-content">
+<section class="section">
+  <div class="toolpanel">
+    <div class="dropzone">
+      <div class="bigicon">▧</div>
+      <strong>Choose an image to resize</strong>
+      <p>JPG, PNG or WebP · processed locally</p>
+      <label class="btn filelabel">Choose image<input id="resizeFile" type="file" accept="image/*"></label>
+    </div>
+    <img id="resizePreview" class="imagepreview" alt="Image resize preview">
+    <p id="resizeInfo" class="sub"></p>
+    <div class="options">
+      <div class="option"><label for="resizeW">Width (px)</label><input id="resizeW" type="number" min="1" max="10000" placeholder="Width"></div>
+      <div class="option"><label for="resizeH">Height (px)</label><input id="resizeH" type="number" min="1" max="10000" placeholder="Height"></div>
+      <div class="option"><label><input id="keepRatio" type="checkbox" checked class="inline-check">Keep aspect ratio</label></div>
+      <div class="option"><label for="resizeFormat">Output format</label><select id="resizeFormat"><option value="image/png">PNG</option><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option></select></div>
+    </div>
+    <div class="rowtools"><button class="btn" id="resizeBtn" onclick="processImage()" disabled>Resize & download</button></div>
+    <p id="resizeStatus" class="status" role="status"></p>
+
+    <div class="related">
+      <p>RELATED TOOLS FOR YOU:</p>
+      <div class="rowtools">
+        <a href="photo-size-in-kb.html" class="btn secondary">Photo Size in KB ↗</a>
+        <a href="passport-photo-resizer.html" class="btn secondary">Passport Photo Resizer ↗</a>
+        <a href="image-compressor.html" class="btn secondary">Image Compressor ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="infoblock">
+    <h2>About this tool</h2>
+    <p>This free image resizer lets you change the width and height of any photo directly in your browser — no software or sign-up required.</p>
+    <ul>
+      <li><strong>Keep aspect ratio:</strong> Automatically adjusts height when you change width (and vice versa) to avoid stretching.</li>
+      <li><strong>Output format:</strong> Choose PNG, JPG or WebP depending on your needs.</li>
+      <li><strong>Privacy:</strong> Your image is processed locally and never uploaded to a server.</li>
+    </ul>
+    <p>Ideal for resizing photos for websites, social media, email attachments or printing.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footerlinks">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+    <div class="footerrow">
+      <span>© <span id="year"></span> QuickFreeTools</span>
+      <span>Useful tools. Simple experience.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+$('year').textContent=new Date().getFullYear();
+
+let imgState=null;
+
+function formatBytes(n){
+  if(n<1024)return n+' B';
+  if(n<1048576)return (n/1024).toFixed(1)+' KB';
+  return (n/1048576).toFixed(2)+' MB';
+}
+function loadImage(file){
+  return new Promise((resolve,reject)=>{
+    if(!file||!file.type.startsWith('image/')){reject(new Error('Please select a valid image.'));return}
+    const url=URL.createObjectURL(file),img=new Image();
+    img.onload=()=>resolve({img,url,file});
+    img.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('This image could not be opened.'))};
+    img.src=url;
+  });
+}
+async function selectImage(file){
+  const status=$('resizeStatus');
+  status.textContent='';
+  if(!file)return;
+  try{
+    const result=await loadImage(file);
+    if(imgState?.url)URL.revokeObjectURL(imgState.url);
+    imgState=result;
+    $('resizePreview').src=result.url;
+    $('resizePreview').style.display='block';
+    $('resizeInfo').textContent=`Original: ${result.img.naturalWidth} × ${result.img.naturalHeight} px · ${formatBytes(file.size)}`;
+    if(file.size>25*1024*1024){
+      $('resizeInfo').textContent+=' · Large file, processing may take a moment.';
+    }
+    $('resizeW').value=result.img.naturalWidth;
+    $('resizeH').value=result.img.naturalHeight;
+    $('resizeBtn').disabled=false;
+  }catch(e){
+    if(file.type && file.type.toLowerCase().includes('heic')){
+      status.textContent='HEIC photos are not supported by browsers yet. Please convert to JPG first.';
+    }else{
+      status.textContent=e.message;
+    }
+  }
+}
+$('resizeFile').addEventListener('change',e=>selectImage(e.target.files[0]));
+
+$('resizeW').addEventListener('input',()=>{
+  if(imgState&&$('keepRatio').checked&&Number($('resizeW').value)>0){
+    $('resizeH').value=Math.round(Number($('resizeW').value)*imgState.img.naturalHeight/imgState.img.naturalWidth);
+  }
+});
+$('resizeH').addEventListener('input',()=>{
+  if(imgState&&$('keepRatio').checked&&Number($('resizeH').value)>0){
+    $('resizeW').value=Math.round(Number($('resizeH').value)*imgState.img.naturalWidth/imgState.img.naturalHeight);
+  }
+});
+
+async function processImage(){
+  const s=imgState,status=$('resizeStatus'),btn=$('resizeBtn');
+  if(!s)return;
+  const w=Number($('resizeW').value),h=Number($('resizeH').value);
+  const format=$('resizeFormat').value,quality=.92;
+  if(!Number.isInteger(w)||!Number.isInteger(h)||w<1||h<1||w>10000||h>10000){
+    status.textContent='Enter width and height between 1 and 10000 pixels.';return;
+  }
+  if(w*h>40000000){status.textContent='That output is very large. Choose smaller dimensions.';return}
+  btn.disabled=true;status.textContent='Processing image…';
+  try{
+    const canvas=document.createElement('canvas');
+    canvas.width=w;canvas.height=h;
+    const ctx=canvas.getContext('2d');
+    if(format==='image/jpeg'){ctx.fillStyle='#ffffff';ctx.fillRect(0,0,w,h)}
+    ctx.drawImage(s.img,0,0,w,h);
+    const blob=await new Promise((resolve,reject)=>{
+      canvas.toBlob(b=>b?resolve(b):reject(new Error('Could not create output. Try another format.')),format,quality);
+    });
+    let ext=format==='image/jpeg'?'jpg':format==='image/png'?'png':'webp';
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download=`quickfreetools-resize.${ext}`;
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1500);
+    status.textContent=`Done! Your ${w} × ${h} px image has been downloaded (${formatBytes(blob.size)}).`;
+  }catch(e){status.textContent=e.message||'Something went wrong. Please try again.'}
+  finally{btn.disabled=false}
+}
+</script>
+</body>
+</html>
