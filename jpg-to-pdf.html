@@ -8,13 +8,47 @@
 <meta name="description" content="Convert JPG, PNG and WebP images to PDF online for free. Combine multiple images into one PDF, reorder pages and adjust quality. No signup or watermark.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://quickfreetools.github.io/quickfreetools/jpg-to-pdf.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g fill='%2385c341'><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(45 50 50)'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(90 50 50)'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(135 50 50)'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(180 50 50)'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(225 50 50)'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(270 50 50)'/><path d='M50,12 C53,12 55,22 55,35 C55,43 53,46 50,46 C47,46 45,43 45,35 C45,22 47,12 50,12 Z' transform='rotate(315 50 50)'/><circle cx='50' cy='50' r='7'/></g></svg>">
 
 <meta property="og:title" content="Free JPG to PDF Converter | QuickFreeTools">
 <meta property="og:description" content="Convert multiple images to one PDF for free. Fast, private and easy to use.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://quickfreetools.github.io/quickfreetools/jpg-to-pdf.html">
+<meta property="og:site_name" content="QuickFreeTools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free JPG to PDF Converter | QuickFreeTools">
+<meta name="twitter:description" content="Convert multiple images to one PDF for free. Fast, private and easy to use.">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JPG to PDF Converter",
+  "url": "https://quickfreetools.github.io/quickfreetools/jpg-to-pdf.html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "description": "Free online tool to convert JPG, PNG and WebP images to PDF. Combine multiple images into one document."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Can I convert multiple JPG images into one PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. Upload multiple images and arrange them in the order you want. The converter creates one PDF containing your images."}},
+    {"@type":"Question","name":"Does this JPG to PDF converter support PNG?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can convert JPG, PNG and WebP images into a PDF document."}},
+    {"@type":"Question","name":"Is this JPG to PDF converter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. The converter is free to use and does not require an account or add a watermark."}},
+    {"@type":"Question","name":"Are my images uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Image conversion happens locally in your browser. The PDF library is loaded from a CDN, but your images are not uploaded for processing."}},
+    {"@type":"Question","name":"Can I reduce the PDF file size?","acceptedAnswer":{"@type":"Answer","text":"You can select a lower image quality setting. This may reduce the PDF file size, although the result depends on the source images."}},
+    {"@type":"Question","name":"Does the converter work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can upload images, reorder them with the arrow buttons and create a PDF using a compatible mobile browser."}}
+  ]
+}
+</script>
+
+<script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+<!-- ⚠️ Recommended: replace the line above with the exact script tag (including integrity hash)
+     from https://cdnjs.com/libraries/jspdf/2.5.1 for better security (Subresource Integrity). -->
 
 <style>
 :root{
@@ -446,6 +480,7 @@ const statusBox = document.getElementById("status");
 const downloadArea = document.getElementById("downloadArea");
 const downloadLink = document.getElementById("downloadLink");
 const convertBtn = document.getElementById("convertBtn");
+const convertBtnDefaultText = convertBtn.textContent;
 
 let images = [];
 let nextId = 0;
@@ -529,10 +564,14 @@ function addFiles(files){
   resetDownload();
   render();
 
-  setStatus(added
-    ? added + " image(s) added. Arrange your pages and choose PDF settings."
-    : "Please select JPG, PNG or WebP images."
-  );
+  if(added && images.length > 60){
+    setStatus(added + " image(s) added. You now have " + images.length + " images — large batches may take longer and use more memory.");
+  }else{
+    setStatus(added
+      ? added + " image(s) added. Arrange your pages and choose PDF settings."
+      : "Please select JPG, PNG or WebP images."
+    );
+  }
 }
 
 function removeImage(id){
@@ -653,11 +692,11 @@ document.getElementById("clearAll").addEventListener("click", () => {
   document.getElementById(id).addEventListener("change", resetDownload);
 });
 
-function loadImage(url){
+function loadImage(url,name){
   return new Promise((resolve,reject) => {
     const img = new Image();
     img.onload = () => resolve(img);
-    img.onerror = () => reject(new Error("Unable to read an image."));
+    img.onerror = () => reject(new Error("Unable to read image: " + name));
     img.src = url;
   });
 }
@@ -702,6 +741,7 @@ convertBtn.addEventListener("click", async () => {
   }
 
   convertBtn.disabled = true;
+  convertBtn.textContent = "Converting...";
   resetDownload();
   setStatus("Creating your PDF. Please wait...");
 
@@ -720,7 +760,7 @@ convertBtn.addEventListener("click", async () => {
     for(let i = 0;i < selectedImages.length;i++){
       setStatus("Processing image " + (i + 1) + " of " + selectedImages.length + "...");
 
-      const img = await loadImage(selectedImages[i].url);
+      const img = await loadImage(selectedImages[i].url, selectedImages[i].file.name);
       const prepared = makeJPEG(img,quality);
 
       let pageW,pageH;
@@ -804,6 +844,7 @@ convertBtn.addEventListener("click", async () => {
     setStatus("Conversion failed: " + error.message);
   }finally{
     convertBtn.disabled = false;
+    convertBtn.textContent = convertBtnDefaultText;
   }
 });
 
