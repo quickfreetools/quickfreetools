@@ -2,62 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/</loc>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/word-counter.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/image-resizer.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/image-compressor.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/photo-size-in-kb.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/signature-resizer.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/passport-photo-resizer.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/jpg-to-pdf.html</loc>
-    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/about.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/contact.html</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/privacy-policy.html</loc>
-    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://quickfreetools.github.io/quickfreetools/terms.html</loc>
-    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>
